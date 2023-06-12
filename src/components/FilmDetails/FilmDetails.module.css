@@ -1,0 +1,110 @@
+.filmBlockContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.filmBlock {
+  display: flex;
+  gap: 30px;
+
+  flex-wrap: wrap;
+
+  align-items: flex-start;
+  justify-content: space-around;
+
+  padding: 30px;
+}
+
+.filmBlockItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 25px;
+  width: 300px;
+
+  min-height: 500px;
+
+  background-color: rgb(238, 238, 238);
+  border: 1px lightgray solid;
+  border-radius: 10px;
+}
+
+.filmBlockItemLinks {
+  gap: 50px;
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-around;
+
+  width: 300px;
+}
+
+.filmTitle {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0px;
+
+  margin-bottom: 10px;
+}
+
+.filmDate {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+
+  margin-bottom: 10px;
+}
+
+.filmOverviewTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+
+  margin-bottom: 10px;
+}
+
+.filmOverviewTitleText {
+  font-size: 15px;
+  margin: 0;
+
+  margin-bottom: 20px;
+}
+
+.filmGenresTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+
+  margin-bottom: 10px;
+}
+
+.filmGenresTitleText {
+  font-size: 15px;
+  margin: 0;
+}
+
+.seeMoreLink {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 15px;
+
+  transition: all linear 300ms;
+
+  background-color: lightgray;
+
+  &:hover {
+    color: orange;
+    background-color: black;
+  }
+}

@@ -1,0 +1,58 @@
+.castList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 10px;
+  height: 380px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.castList::-webkit-scrollbar {
+  width: 2px;
+}
+
+.castList::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.castList::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+.castListItem {
+  display: flex;
+  gap: 20px;
+
+  width: 90%;
+  padding: 5px;
+
+  border: 1px rgb(191, 191, 191) solid;
+  border-radius: 10px;
+
+  transition: all 300ms linear;
+
+  &:hover {
+    scale: 1.05;
+    background-color: lightgrey;
+  }
+}
+
+.castListItemTextWrapper {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.castListItemTextName {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.castListItemTextHero {
+}
