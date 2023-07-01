@@ -7,9 +7,11 @@ import css from './trend.module.css';
 const DEFAULT_IMG = 'https://openclipart.org/image/800px/323563';
 
 const MovieList = ({ films }) => {
-  console.log(films);
-
   const location = useLocation();
+
+  if (films === undefined) {
+    return null;
+  }
 
   return (
     <div>

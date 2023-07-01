@@ -7,7 +7,7 @@ export const SharedLayout = () => {
     <div>
       <header>
         <nav className={css.navigationList}>
-          <Link className={css.navigationListItem} to="/" end>
+          <Link className={css.navigationListItem} to="/">
             Home
           </Link>
           <Link to="/movies" className={css.navigationListItem}>
