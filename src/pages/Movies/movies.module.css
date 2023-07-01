@@ -13,11 +13,3 @@
   align-items: center;
   justify-content: center;
 }
-
-.searchInput {
-  height: 50px;
-  width: 50%;
-  font-size: 25px;
-
-  padding: 5px 20px;
-}

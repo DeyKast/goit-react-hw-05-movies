@@ -14,7 +14,8 @@ export const SearchFilm = async query => {
     Notify.failure(`Sorry we can't find your film`);
     return;
   }
-  return response.data;
+
+  return response.data.results;
 };
 
 SearchFilm.propTypes = {

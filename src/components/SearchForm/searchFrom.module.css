@@ -1,0 +1,27 @@
+.searchInput {
+  height: 40px;
+  width: 50%;
+  font-size: 25px;
+
+  padding: 5px 20px;
+}
+
+.formWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.fromButton {
+  padding: 10px;
+  width: 100px;
+  height: 54px;
+
+  &:hover,
+  &:focus {
+    background-color: lightgray;
+    border: 1px solid black;
+  }
+}

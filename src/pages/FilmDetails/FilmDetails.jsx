@@ -11,11 +11,15 @@ const FilmDetails = () => {
   const { id } = useParams();
 
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/products';
+  const backLinkHref = location.state?.from ?? '/movies';
 
   useEffect(() => {
     GetFilmInfo(id).then(data => setFilm(data));
   }, [id]);
+
+  if (!film) {
+    return;
+  }
 
   const imgSrc =
     film && film.poster_path

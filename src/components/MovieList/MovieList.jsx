@@ -1,15 +1,20 @@
+import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import css from '../TrendList/trend.module.css';
 
-export const SearchEngineResult = ({ data }) => {
+import css from './trend.module.css';
+
+const DEFAULT_IMG = 'https://openclipart.org/image/800px/323563';
+
+const MovieList = ({ films }) => {
+  console.log(films);
+
   const location = useLocation();
-  const DEFAULT_IMG = 'https://openclipart.org/image/800px/323563';
 
   return (
-    <>
+    <div>
       <ul className={css.trendList}>
-        {data.map(({ id, title, poster_path }) => {
+        {films.map(({ id, title, poster_path }) => {
           const imgSrc = poster_path
             ? `https://image.tmdb.org/t/p/w500/${poster_path}`
             : DEFAULT_IMG;
@@ -28,10 +33,12 @@ export const SearchEngineResult = ({ data }) => {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 };
 
-SearchEngineResult.propTypes = {
-  data: PropTypes.array.isRequired,
+MovieList.propTypes = {
+  films: PropTypes.array.isRequired,
 };
+
+export default MovieList;

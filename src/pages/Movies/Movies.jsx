@@ -1,49 +1,37 @@
+import SearchForm from 'components/SearchForm/SearchForm';
 import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
+import MovieList from 'components/MovieList/MovieList';
 import { SearchFilm } from 'components/service/SearchFilm';
-import { SearchEngineResult } from 'components/SearchEngine/SearchEngine';
-
-import css from './movies.module.css';
 
 const Movies = () => {
-  const [searchData, setSearchData] = useState('');
-
-  let timer = null;
+  const [films, setFilms] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    if (!searchData) {
+    const film = searchParams.get('film') ?? '';
+    if (!film) {
       return;
     }
-    SearchFilm(searchData);
-  });
+    SearchFilm(film)
+      .then(data => {
+        setFilms(data);
+      })
+      .catch(error => {
+        alert(error.message);
+      });
+  }, [searchParams]);
 
-  const handleInputChange = async event => {
-    clearTimeout(timer);
-
-    timer = setTimeout(async () => {
-      if (!event.target.value.trim()) {
-        return;
-      }
-      const searchData = await SearchFilm(event.target.value);
-      if (!searchData) {
-        console.log('error');
-        return;
-      }
-      setSearchData(searchData.results);
-    }, 500);
+  const onSubmit = film => {
+    setSearchParams({ film });
   };
 
   return (
-    <main className={css.mainContainer}>
-      <h1 className={css.mainTitle}>MOVIES</h1>
-      <input
-        type="text"
-        onChange={handleInputChange}
-        className={css.searchInput}
-        placeholder="Search"
-      />
-      {searchData && <SearchEngineResult data={searchData} />}
-    </main>
+    <div>
+      <SearchForm onSubmit={onSubmit} />
+      <MovieList films={films} />
+    </div>
   );
 };
 
